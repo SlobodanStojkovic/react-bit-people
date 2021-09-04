@@ -1,4 +1,6 @@
 import React from "react";
+import { getUsers } from "../../Services/getUsers";
+
 
 import "./Header.css";
 
@@ -12,7 +14,7 @@ export const Header = ({gridView}) => {
             <h1>Bit Persons</h1>
             <button onClick={f}>dada</button>
             <br />
-            <button><i className="fa-solid fa-user"></i></button>
+            <button onClick={getUsers}><i className="fa-solid fa-user"></i>Refresh</button>
         </div>
     );
 };
