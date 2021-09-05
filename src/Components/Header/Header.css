@@ -1,0 +1,17 @@
+.refreshButton {
+    background-color: rgb(243, 132, 151);
+}
+
+.fa-redo-alt {
+    color: white;
+    margin-right: 3px;
+}
+
+.fa-grip-horizontal {
+    color: white;
+    margin-right: 3px;
+}
+
+.aboutHeader {
+    margin: 3px;
+}

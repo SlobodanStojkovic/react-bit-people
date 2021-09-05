@@ -18,19 +18,35 @@ function App() {
 
 
   useEffect(() => {
-    getUsers().then((users) => {
-      setUsers(users);
-      setFilteredUsers(users);
-    });
+    if (localStorage.getItem("reactBitPeopleProject#36232") === null) {
+      getUsers().then((users) => {
+        setUsers(users);
+        setFilteredUsers(users);
+        localStorage.setItem("reactBitPeopleProject#36232", JSON.stringify(users))
+      });
+    } else {
+      setUsers(JSON.parse(localStorage.getItem("reactBitPeopleProject#36232")));
+      setFilteredUsers(JSON.parse(localStorage.getItem("reactBitPeopleProject#36232")));
+    }
   }, []);
 
+  const onRefresh = () => {
+    localStorage.removeItem("reactBitPeopleProject#36232")
+    getUsers()
+      .then((users) => {
+        setUsers(users);
+        setFilteredUsers(users);
+        setInputValue("");
+        localStorage.setItem("reactBitPeopleProject#36232", JSON.stringify(users))
+      });
+  };
 
 
   const onTyping = (event) => {
     setInputValue(event.target.value);
     const filtUsers = users.filter(user => {
       const fullName = `${user.name.first} ${user.name.last}`;
-     return fullName.toLowerCase().includes(event.target.value.toLowerCase())
+      return fullName.toLowerCase().includes(event.target.value.toLowerCase())
     })
     setFilteredUsers(filtUsers);
     console.log(filteredUsers);
@@ -40,10 +56,10 @@ function App() {
 
   return (
     <div className="App">
-      <Header gridView={gridView} />
-      <Search inputValue={inputValue} onChange={onTyping}/>
+      <Header gridView={gridView} onRefresh={onRefresh} />
+      <Search inputValue={inputValue} onChange={onTyping} />
       <Switch>
-        <Route exact path='/home' component={() => <Main gridView={gridView} users={filteredUsers} inputValue={inputValue}/>} />
+        <Route exact path='/home' component={() => <Main gridView={gridView} users={filteredUsers} inputValue={inputValue} />} />
         <Route exact path='/about' component={About} />
         <Redirect from='/' to='/home' />
       </Switch>
