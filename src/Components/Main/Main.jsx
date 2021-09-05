@@ -1,8 +1,8 @@
 import "./Main.css";
 import React, { useEffect, useState } from 'react';
 import { getUsers } from '../../Services/getUsers';
-import { GridView } from './GridView/GridView';
 import { ListView } from './ListView/ListView';
+import { GridView } from "./GridView/GridView";
 import loadingImage from "../Main/assets/loadingScreen.gif";
 import noUsersImage from "../Main/assets/noUsersImage.png";
 
@@ -45,10 +45,15 @@ export const Main = (props) => {
             </div>
         )
     } else {
-        if (props.GridView) {
+        if (!props.GridView) {
             return (
-                <div className='main'>
-                    ovo je gridview
+                <div className='gridmain'>
+                    <p className='genderdata'>Male: {male} Female: {female}</p>
+                    {
+                        users.map((user, index) => {
+                            return <GridView user={user} index={index} key={index}/>
+                        })
+                    }
                 </div>
             )
         } else {
@@ -57,7 +62,7 @@ export const Main = (props) => {
                     <p className='genderdata'>Male: {male} Female: {female}</p>
                     {
                         users.map((user, index) => {
-                            return <ListView user={user} index={index} />
+                            return <ListView user={user} index={index} key={index}/>
                         })
                     }
                 </div>
