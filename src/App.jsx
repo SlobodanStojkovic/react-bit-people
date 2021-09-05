@@ -4,17 +4,46 @@ import { Header } from './Components/Header/Header'
 import { Footer } from './Components/Footer/Footer'
 import { Switch, Route, Redirect } from "react-router-dom";
 import { About } from './Components/About/About'
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { Search } from './Components/Search/Search';
+import { getUsers } from './Services/getUsers';
+
 
 function App() {
 
   const [gridView, setGridView] = useState(false);
+  const [users, setUsers] = useState([]);
+  const [inputValue, setInputValue] = useState("");
+  const [filteredUsers, setFilteredUsers] = useState([]);
+
+
+  useEffect(() => {
+    getUsers().then((users) => {
+      setUsers(users);
+      setFilteredUsers(users);
+    });
+  }, []);
+
+
+
+  const onTyping = (event) => {
+    setInputValue(event.target.value);
+    const filtUsers = users.filter(user => {
+      const fullName = `${user.name.first} ${user.name.last}`;
+     return fullName.toLowerCase().includes(event.target.value.toLowerCase())
+    })
+    setFilteredUsers(filtUsers);
+    console.log(filteredUsers);
+  }
+
+
 
   return (
     <div className="App">
-      <Header gridView={gridView}/>
+      <Header gridView={gridView} />
+      <Search inputValue={inputValue} onChange={onTyping} />
       <Switch>
-        <Route exact path='/home' component={() => <Main gridView={gridView} />} />
+        <Route exact path='/home' component={() => <Main gridView={gridView} users={filteredUsers} />} />
         <Route exact path='/about' component={About} />
         <Redirect from='/' to='/home' />
       </Switch>

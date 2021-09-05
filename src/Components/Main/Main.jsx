@@ -8,8 +8,10 @@ export const Main = (props) => {
     let [users, setUsers] = useState([])
 
     useEffect(() =>{
-        getUsers()
-            .then(users => setUsers(users))
+        /* getUsers()
+            .then(users => setUsers(users)) */
+            let users = props.users;
+            setUsers(users)
     }, [])
 
     let male = 0;
