@@ -41,9 +41,9 @@ function App() {
   return (
     <div className="App">
       <Header gridView={gridView} />
-      <Search inputValue={inputValue} onChange={onTyping} />
+      <Search inputValue={inputValue} onChange={onTyping}/>
       <Switch>
-        <Route exact path='/home' component={() => <Main gridView={gridView} users={filteredUsers} />} />
+        <Route exact path='/home' component={() => <Main gridView={gridView} users={filteredUsers} inputValue={inputValue}/>} />
         <Route exact path='/about' component={About} />
         <Redirect from='/' to='/home' />
       </Switch>
