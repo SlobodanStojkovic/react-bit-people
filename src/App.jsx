@@ -38,6 +38,7 @@ function App() {
         setFilteredUsers(users);
         setInputValue("");
         localStorage.setItem("reactBitPeopleProject#36232", JSON.stringify(users))
+        localStorage.setItem("lastModBitPeople2303", document.lastModified)
       });
   };
 
