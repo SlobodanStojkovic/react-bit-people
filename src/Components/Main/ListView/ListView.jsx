@@ -1,7 +1,6 @@
 import "./ListView.css";
 import { getEmail } from '../../../Services/getEmail';
 import { getBirthday } from "../../../Services/getBirthday";
-
 import React from 'react';
 
 export const ListView = ({ user, index }) => {
