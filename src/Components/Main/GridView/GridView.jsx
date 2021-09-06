@@ -1,11 +1,10 @@
-
 import React from 'react';
 import "./GridView.css";
 import { getEmail } from '../../../Services/getEmail';
 import { getBirthday } from "../../../Services/getBirthday";
 
 
-export const GridView = ({user, index, key}) => {
+export const GridView = ({ user, index, key }) => {
     let cName = '';
 
     if (user.gender === 'female') {

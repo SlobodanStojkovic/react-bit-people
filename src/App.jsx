@@ -4,7 +4,6 @@ import { Header } from './Components/Header/Header'
 import { Footer } from './Components/Footer/Footer'
 import { Switch, Route, Redirect } from "react-router-dom";
 import { About } from './Components/About/About'
-
 import { useEffect, useState } from 'react';
 import { Search } from './Components/Search/Search';
 import { getUsers } from './Services/getUsers';
@@ -31,6 +30,7 @@ function App() {
     }
   }, []);
 
+
   const onRefresh = () => {
     localStorage.removeItem("reactBitPeopleProject#36232")
     getUsers()
@@ -54,9 +54,11 @@ function App() {
     console.log(filteredUsers);
   }
 
+
   const viewChange = () => {
     setGridView(!gridView)
   }
+
 
   return (
     <div className="App">

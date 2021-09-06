@@ -1,13 +1,10 @@
 import "./Main.css";
-import React, { useEffect, useState } from 'react';
 import { ListView } from './ListView/ListView';
 import { GridView } from "./GridView/GridView";
 import loadingImage from "../Main/assets/loadingScreen.gif";
 import noUsersImage from "../Main/assets/noUsersImage.png";
 
-export const Main = ({gridView, users, inputValue}) => {
-
-
+export const Main = ({ gridView, users, inputValue }) => {
 
     let male = 0;
     let female = 0;
@@ -22,8 +19,6 @@ export const Main = ({gridView, users, inputValue}) => {
         })
     }
 
-
-
     if (users.length < 14 && inputValue.length < 1) {
         return (
             <div>
@@ -31,7 +26,6 @@ export const Main = ({gridView, users, inputValue}) => {
 
             </div>
         )
-
     } else if (users.length < 1 && inputValue.length > 0) {
         return (
             <div>
@@ -46,7 +40,7 @@ export const Main = ({gridView, users, inputValue}) => {
                     <p className='genderdata mb-0'>Male: {male} Female: {female}</p>
                     {
                         users.map((user, index) => {
-                            return <GridView user={user} index={index} key={index}/>
+                            return <GridView user={user} index={index} key={index} />
                         })
                     }
                 </div>
@@ -57,7 +51,7 @@ export const Main = ({gridView, users, inputValue}) => {
                     <p className='genderdata mb-0 '>Male: {male} Female: {female}</p>
                     {
                         users.map((user, index) => {
-                            return <ListView user={user} index={index} key={index}/>
+                            return <ListView user={user} index={index} key={index} />
                         })
                     }
                 </div>
