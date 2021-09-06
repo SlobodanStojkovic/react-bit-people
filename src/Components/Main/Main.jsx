@@ -5,7 +5,7 @@ import { GridView } from "./GridView/GridView";
 import loadingImage from "../Main/assets/loadingScreen.gif";
 import noUsersImage from "../Main/assets/noUsersImage.png";
 
-export const Main = ({gridView, users}) => {
+export const Main = ({gridView, users, inputValue}) => {
 
 
 
@@ -24,7 +24,7 @@ export const Main = ({gridView, users}) => {
 
 
 
-    if (users.length < 14 && props.inputValue.length < 1) {
+    if (users.length < 14 && inputValue.length < 1) {
         return (
             <div>
                 <img className="loadingImage" src={loadingImage} alt="loading..." />
@@ -32,7 +32,7 @@ export const Main = ({gridView, users}) => {
             </div>
         )
 
-    } else if (users.length < 1 && props.inputValue.length > 0) {
+    } else if (users.length < 1 && inputValue.length > 0) {
         return (
             <div>
                 <img className="noUsersImage" src={noUsersImage} alt="no users..." />
@@ -40,7 +40,7 @@ export const Main = ({gridView, users}) => {
             </div>
         )
     } else {
-        if (props.gridView) {
+        if (gridView) {
             return (
                 <div className='gridmain'>
                     <p className='genderdata mb-0'>Male: {male} Female: {female}</p>
