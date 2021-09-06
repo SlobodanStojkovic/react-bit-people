@@ -5,10 +5,12 @@ import { getUsers } from "../../Services/getUsers";
 
 import "./Header.css";
 
-export const Header = ({ gridView, onRefresh }) => {
+export const Header = ({ gridView, onRefresh, viewChange }) => {
 
-    const changeToGridButton = () => {
-        return gridView = !gridView;
+    let buttonLook = <i className="gridButton btn-info fas fa-grip-horizontal m-3 text-light " ></i>;
+    
+    if (gridView){
+        buttonLook = <i class="fas fa-list"></i>;
     }
 
     return (
@@ -20,7 +22,7 @@ export const Header = ({ gridView, onRefresh }) => {
     <div className="links">
         <Link to="/about" className=" about text-light m-3 text-light"> About </Link>
         <button  onClick={onRefresh}><i class="refreshButton fas fa-redo m-3 text-light" ></i></button>
-            <button onClick={changeToGridButton}><i className="gridButton btn-info fas fa-grip-horizontal m-3 text-light " ></i></button>
+            <button onClick={viewChange}>{buttonLook}</button>
     </div>
     </div>
 </nav>

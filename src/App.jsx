@@ -53,11 +53,13 @@ function App() {
     console.log(filteredUsers);
   }
 
-
+  const viewChange = () => {
+    setGridView(!gridView)
+  }
 
   return (
     <div className="App">
-      <Header gridView={gridView} onRefresh={onRefresh} />
+      <Header gridView={gridView} onRefresh={onRefresh} viewChange={viewChange} />
       <Search inputValue={inputValue} onChange={onTyping} />
       <Switch>
         <Route exact path='/home' component={() => <Main gridView={gridView} users={filteredUsers} inputValue={inputValue} />} />

@@ -45,7 +45,7 @@ export const Main = (props) => {
             </div>
         )
     } else {
-        if (!props.GridView) {
+        if (props.gridView) {
             return (
                 <div className='gridmain'>
                     <p className='genderdata mb-0'>Male: {male} Female: {female}</p>
