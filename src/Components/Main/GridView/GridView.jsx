@@ -1,9 +1,9 @@
-import "./GridView.css";
 
+import React from 'react';
+import "./GridView.css";
 import { getEmail } from '../../../Services/getEmail';
 import { getBirthday } from "../../../Services/getBirthday";
 
-import React from 'react';
 
 export const GridView = ({user, index, key}) => {
     let cName = '';

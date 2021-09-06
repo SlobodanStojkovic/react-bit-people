@@ -1,21 +1,32 @@
 import React from "react";
 
-import { getUsers } from "../../Services/getUsers";
+import { Link } from "react-router-dom";
 
 import "./Header.css";
 
 
+export const Header = ({ gridView, onRefresh, viewChange }) => {
 
-export const Header = ({gridView, buttonClick, refresh}) => {
-
-    let view = gridView ? 'grid' : 'list';
+    let buttonLook = <i className="gridButton btn-info fas fa-grip-horizontal m-3 text-light " ></i>;
+    
+    if (gridView){
+        buttonLook = <i class="fas fa-list"></i>;
+    }
 
     return (
-        <div className='header'>
-            <h1>Bit Persons</h1>
-            <button onClick={buttonClick}>{view}</button>
-            <br />
-            <button onClick={refresh}><i class="fas fa-redo-alt"></i>Refresh</button>
-        </div>
+
+<header>
+<nav className="navbar navbar-light header fixed-top">
+    <div className="w-75 container-fluid">
+    <Link className= "bitPeople" to="/home"><span className="navbar-brand mb-0 ms-5 fw-bold fs-1 text-light ">Bit People</span></Link>
+    <div className="links">
+        <Link to="/about" className=" about text-light m-3 text-light"> About </Link>
+        <button  onClick={onRefresh}><i class="refreshButton fas fa-redo m-3 text-light" ></i></button>
+            <button onClick={viewChange}>{buttonLook}</button>
+    </div>
+    </div>
+</nav>
+</header>
+
     );
 };

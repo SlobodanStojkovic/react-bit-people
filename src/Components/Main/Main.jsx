@@ -1,20 +1,20 @@
 import "./Main.css";
 import React, { useEffect, useState } from 'react';
-import { getUsers } from '../../Services/getUsers';
-import { GridView } from './GridView/GridView';
 import { ListView } from './ListView/ListView';
+import { GridView } from "./GridView/GridView";
+import loadingImage from "../Main/assets/loadingScreen.gif";
+import noUsersImage from "../Main/assets/noUsersImage.png";
 
 export const Main = ({gridView, users}) => {
-    // let [users, setUsers] = useState([])
 
-    
+
 
     let male = 0;
     let female = 0;
 
-    if (users){
+    if (users) {
         users.forEach((user) => {
-            if(user.gender === 'female'){
+            if (user.gender === 'female') {
                 female++
             } else {
                 male++
@@ -22,28 +22,46 @@ export const Main = ({gridView, users}) => {
         })
     }
 
-    if (gridView){
+
+
+    if (users.length < 14 && props.inputValue.length < 1) {
         return (
-            <div className='main'>
-                <p className='genderdata'>Male: {male} Female: {female}</p>
-                {   
-                    users.map((user, index) => {
-                        return <GridView user={user} index={index}/>
-                    })
-                }
+            <div>
+                <img className="loadingImage" src={loadingImage} alt="loading..." />
+
+            </div>
+        )
+
+    } else if (users.length < 1 && props.inputValue.length > 0) {
+        return (
+            <div>
+                <img className="noUsersImage" src={noUsersImage} alt="no users..." />
+                <p className="noMatch">We couldnt't find any people matching your search</p>
             </div>
         )
     } else {
-        return (
-            <div className='main'>
-                <p className='genderdata'>Male: {male} Female: {female}</p>
-                {   
-                    users.map((user, index) => {
-                        return <ListView user={user} index={index}/>
-                    })
-                }
-            </div>
-        )
+        if (props.gridView) {
+            return (
+                <div className='gridmain'>
+                    <p className='genderdata mb-0'>Male: {male} Female: {female}</p>
+                    {
+                        users.map((user, index) => {
+                            return <GridView user={user} index={index} key={index}/>
+                        })
+                    }
+                </div>
+            )
+        } else {
+            return (
+                <div className='main'>
+                    <p className='genderdata mb-0 '>Male: {male} Female: {female}</p>
+                    {
+                        users.map((user, index) => {
+                            return <ListView user={user} index={index} key={index}/>
+                        })
+                    }
+                </div>
+            )
+        }
     }
-
 }

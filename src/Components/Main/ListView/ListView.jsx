@@ -4,8 +4,8 @@ import { getBirthday } from "../../../Services/getBirthday";
 
 import React from 'react';
 
-export const ListView = ({user, index}) => {
-    
+export const ListView = ({ user, index }) => {
+
     let clName = '';
     let cName = '';
 
@@ -13,8 +13,13 @@ export const ListView = ({user, index}) => {
         cName = 'female'
     }
 
-    if (index === 0){
+    if (index === 0) {
         clName = 'first'
+    }
+
+    const getName = (userName) => {
+        let firstLetterUpperCase = userName.charAt(0).toUpperCase() + userName.slice(1);
+        return firstLetterUpperCase;
     }
 
     return (
@@ -23,7 +28,7 @@ export const ListView = ({user, index}) => {
                 <img src={user.picture.medium} alt='profile' />
             </div>
             <div className='data'>
-                <p>{user.name.first} {user.name.last}</p>
+                <p>{getName(user.name.first)} {getName(user.name.last)}</p>
                 <p><i className="fa fa-envelope" aria-hidden="true"></i> email: {getEmail(user.email)}</p>
                 <p><i className="fa fa-birthday-cake" aria-hidden="true"></i> {getBirthday(user.dob.date)}</p>
             </div>
