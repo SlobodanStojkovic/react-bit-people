@@ -17,7 +17,7 @@ export const ListView = ({ user, index }) => {
         clName = 'first'
     }
 
-    getName = (userName) => {
+    const getName = (userName) => {
         let firstLetterUpperCase = userName.charAt(0).toUpperCase() + userName.slice(1);
         return firstLetterUpperCase;
     }
