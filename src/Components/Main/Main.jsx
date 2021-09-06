@@ -4,13 +4,10 @@ import { getUsers } from '../../Services/getUsers';
 import { GridView } from './GridView/GridView';
 import { ListView } from './ListView/ListView';
 
-export const Main = (props) => {
-    let [users, setUsers] = useState([])
+export const Main = ({gridView, users}) => {
+    // let [users, setUsers] = useState([])
 
-    useEffect(() =>{
-        getUsers()
-            .then(users => setUsers(users))
-    }, [])
+    
 
     let male = 0;
     let female = 0;
@@ -25,10 +22,15 @@ export const Main = (props) => {
         })
     }
 
-    if (props.GridView){
+    if (gridView){
         return (
             <div className='main'>
-                ovo je gridview
+                <p className='genderdata'>Male: {male} Female: {female}</p>
+                {   
+                    users.map((user, index) => {
+                        return <GridView user={user} index={index}/>
+                    })
+                }
             </div>
         )
     } else {

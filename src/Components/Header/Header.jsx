@@ -6,21 +6,16 @@ import "./Header.css";
 
 
 
+export const Header = ({gridView, buttonClick, refresh}) => {
 
-export const Header = ({gridView}) => {
-    const f = () => {
-        return gridView = !gridView;
-    }
-
-    if(gridView) {}
-    
+    let view = gridView ? 'grid' : 'list';
 
     return (
         <div className='header'>
             <h1>Bit Persons</h1>
-            <button onClick={f}></button>
+            <button onClick={buttonClick}>{view}</button>
             <br />
-            <button onClick={getUsers}><i className="fa-solid fa-user"></i>Refresh</button>
+            <button onClick={refresh}><i class="fas fa-redo-alt"></i>Refresh</button>
         </div>
     );
 };
