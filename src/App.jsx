@@ -51,7 +51,6 @@ function App() {
       return fullName.toLowerCase().includes(event.target.value.toLowerCase())
     })
     setFilteredUsers(filtUsers);
-    console.log(filteredUsers);
   }
 
 
