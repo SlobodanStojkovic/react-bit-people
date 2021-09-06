@@ -1,4 +1,17 @@
 # Getting Started with Create React App
+Check how our website project works by CLICKING HERE >>> [react-bit-people](https://slobodanstojkovic.github.io/react-bit-people/)
+
+React BIT PEOPLE is application created using React that pulls random user data from [Random User API](https://randomuser.me/)
+
+Technologies used for creating this app are React, JavaScript and AJAX.
+
+This project is created during BIT Frontend BootCamp.
+
+
+
+
+
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
