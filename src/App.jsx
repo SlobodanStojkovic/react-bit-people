@@ -4,15 +4,16 @@ import { Header } from './Components/Header/Header'
 import { Footer } from './Components/Footer/Footer'
 import { Switch, Route, Redirect } from "react-router-dom";
 import { About } from './Components/About/About'
+
 import { useEffect, useState } from 'react';
 import { Search } from './Components/Search/Search';
 import { getUsers } from './Services/getUsers';
-
 
 function App() {
 
   const [gridView, setGridView] = useState(false);
   const [users, setUsers] = useState([]);
+
   const [inputValue, setInputValue] = useState("");
   const [filteredUsers, setFilteredUsers] = useState([]);
 

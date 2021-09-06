@@ -1,9 +1,9 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { getUsers } from "../../Services/getUsers";
 
+import { Link } from "react-router-dom";
 
 import "./Header.css";
+
 
 export const Header = ({ gridView, onRefresh, viewChange }) => {
 
@@ -27,5 +27,6 @@ export const Header = ({ gridView, onRefresh, viewChange }) => {
     </div>
 </nav>
 </header>
+
     );
 };
