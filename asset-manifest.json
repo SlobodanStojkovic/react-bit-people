@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/react-bit-people/static/css/main.15240380.chunk.css",
+    "main.js": "/react-bit-people/static/js/main.4f7d2b0f.chunk.js",
+    "main.js.map": "/react-bit-people/static/js/main.4f7d2b0f.chunk.js.map",
+    "runtime-main.js": "/react-bit-people/static/js/runtime-main.6c66f052.js",
+    "runtime-main.js.map": "/react-bit-people/static/js/runtime-main.6c66f052.js.map",
+    "static/js/2.0ebb1f86.chunk.js": "/react-bit-people/static/js/2.0ebb1f86.chunk.js",
+    "static/js/2.0ebb1f86.chunk.js.map": "/react-bit-people/static/js/2.0ebb1f86.chunk.js.map",
+    "index.html": "/react-bit-people/index.html",
+    "static/css/main.15240380.chunk.css.map": "/react-bit-people/static/css/main.15240380.chunk.css.map",
+    "static/js/2.0ebb1f86.chunk.js.LICENSE.txt": "/react-bit-people/static/js/2.0ebb1f86.chunk.js.LICENSE.txt",
+    "static/media/loadingScreen.d2f7f41c.gif": "/react-bit-people/static/media/loadingScreen.d2f7f41c.gif",
+    "static/media/noUsersImage.aa51650e.png": "/react-bit-people/static/media/noUsersImage.aa51650e.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.6c66f052.js",
+    "static/js/2.0ebb1f86.chunk.js",
+    "static/css/main.15240380.chunk.css",
+    "static/js/main.4f7d2b0f.chunk.js"
+  ]
+}
