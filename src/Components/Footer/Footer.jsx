@@ -34,9 +34,11 @@ export const Footer = () => {
  
 
   return (
-    <footer className="text-light fixed-bottom footerColor row">
-      <div className="bitCopyright text-start p-3 mx-5 col">© 2021 Copyright BIT</div>
-      <div className="lastModifiedDiv p-3 mr-1 col">Last update: {timeSince(lastMod)} ago</div>
+    <footer className=" navbar text-light fixed-bottom footerColor row ">
+      <div className="w-75 container-fluid">
+      <div className="bitCopyright text-start p-1 mx-5">© 2021 Copyright BIT</div>
+      <div className="lastModifiedDiv text-end p-1 mx-5 ">Last update: {timeSince(lastMod)} ago</div>
+      </div>
     </footer>
   );
 };

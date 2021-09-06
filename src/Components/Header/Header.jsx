@@ -12,11 +12,18 @@ export const Header = ({ gridView, onRefresh }) => {
     }
 
     return (
-        <div className='header'>
-            <Link to="/home"><h1>Bit People</h1></Link>
-            <Link to="/about"> <span className="aboutHeader">About</span> </Link>
-            <button className="refreshButton" onClick={onRefresh}><i className="far fa-redo-alt"></i>Refresh</button>
-            <button className="gridButton btn-info" onClick={changeToGridButton}><i className="fas fa-grip-horizontal"></i></button>
-        </div>
+
+<header>
+<nav className="navbar navbar-light header fixed-top">
+    <div className="w-75 container-fluid">
+    <Link className= "bitPeople" to="/home"><span className="navbar-brand mb-0 ms-5 fw-bold fs-1 text-light ">Bit People</span></Link>
+    <div className="links">
+        <Link to="/about" className=" about text-light m-3 text-light"> About </Link>
+        <button  onClick={onRefresh}><i class="refreshButton fas fa-redo m-3 text-light" ></i></button>
+            <button onClick={changeToGridButton}><i className="gridButton btn-info fas fa-grip-horizontal m-3 text-light " ></i></button>
+    </div>
+    </div>
+</nav>
+</header>
     );
 };

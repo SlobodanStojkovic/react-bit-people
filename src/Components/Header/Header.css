@@ -1,17 +1,22 @@
+
+.header {
+    background-color: rgb(247, 108, 108);
+}
+.bitPeople {
+    text-decoration: none;
+}
+.about {
+    text-decoration: none;
+}
 .refreshButton {
-    background-color: rgb(243, 132, 151);
+    background-color: rgb(247, 108, 108);
+   
+    
 }
-
-.fa-redo-alt {
-    color: white;
-    margin-right: 3px;
+.gridButton {
+    background-color: rgb(247, 108, 108);
 }
-
-.fa-grip-horizontal {
-    color: white;
-    margin-right: 3px;
-}
-
-.aboutHeader {
-    margin: 3px;
+button {
+    background:  transparent;
+    border: none;
 }

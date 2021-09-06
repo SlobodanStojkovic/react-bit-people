@@ -13,7 +13,7 @@ export const GridView = ({user, index, key}) => {
 
 
     return (
-        <div className={`grid ${cName}`}>
+        <div className={`grid ${cName} mt-5`}>
             <div className='gridpicture'>
                 <img src={user.picture.large} alt='profile' />
             </div>

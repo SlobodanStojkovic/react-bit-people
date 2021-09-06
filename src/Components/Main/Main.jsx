@@ -48,7 +48,7 @@ export const Main = (props) => {
         if (!props.GridView) {
             return (
                 <div className='gridmain'>
-                    <p className='genderdata'>Male: {male} Female: {female}</p>
+                    <p className='genderdata mb-0'>Male: {male} Female: {female}</p>
                     {
                         users.map((user, index) => {
                             return <GridView user={user} index={index} key={index}/>
@@ -59,7 +59,7 @@ export const Main = (props) => {
         } else {
             return (
                 <div className='main'>
-                    <p className='genderdata'>Male: {male} Female: {female}</p>
+                    <p className='genderdata mb-0 '>Male: {male} Female: {female}</p>
                     {
                         users.map((user, index) => {
                             return <ListView user={user} index={index} key={index}/>
