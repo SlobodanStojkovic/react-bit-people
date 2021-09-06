@@ -4,7 +4,7 @@ import { getEmail } from '../../../Services/getEmail';
 import { getBirthday } from "../../../Services/getBirthday";
 
 
-export const GridView = ({ user, index, key }) => {
+export const GridView = ({ user }) => {
     let cName = '';
 
     if (user.gender === 'female') {
