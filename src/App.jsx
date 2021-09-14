@@ -18,28 +18,28 @@ function App() {
 
 
   useEffect(() => {
-    if (localStorage.getItem("reactBitPeopleProject#36232") === null) {
+    if (localStorage.getItem("reactBitPeopleProject") === null) {
       getUsers().then((users) => {
         setUsers(users);
         setFilteredUsers(users);
-        localStorage.setItem("reactBitPeopleProject#36232", JSON.stringify(users))
+        localStorage.setItem("reactBitPeopleProject", JSON.stringify(users))
       });
     } else {
-      setUsers(JSON.parse(localStorage.getItem("reactBitPeopleProject#36232")));
-      setFilteredUsers(JSON.parse(localStorage.getItem("reactBitPeopleProject#36232")));
+      setUsers(JSON.parse(localStorage.getItem("reactBitPeopleProject")));
+      setFilteredUsers(JSON.parse(localStorage.getItem("reactBitPeopleProject")));
     }
   }, []);
 
 
   const onRefresh = () => {
-    localStorage.removeItem("reactBitPeopleProject#36232")
+    localStorage.removeItem("reactBitPeopleProject")
     getUsers()
       .then((users) => {
         setUsers(users);
         setFilteredUsers(users);
         setInputValue("");
-        localStorage.setItem("reactBitPeopleProject#36232", JSON.stringify(users))
-        localStorage.setItem("lastModBitPeople2303", document.lastModified)
+        localStorage.setItem("reactBitPeopleProject", JSON.stringify(users))
+        localStorage.setItem("lastModBitPeople", document.lastModified)
       });
   };
 
@@ -68,7 +68,7 @@ function App() {
         <Route exact path='/about' component={About} />
         <Redirect from='/' to='/home' />
       </Switch>
-      <Footer />
+      <Footer onRefresh={onRefresh}/>
     </div>
   );
 }
