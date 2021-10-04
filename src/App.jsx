@@ -8,11 +8,11 @@ import { useEffect, useState } from 'react';
 import { Search } from './Components/Search/Search';
 import { getUsers } from './Services/getUsers';
 
-
 function App() {
 
   const [gridView, setGridView] = useState(false);
   const [users, setUsers] = useState([]);
+
   const [inputValue, setInputValue] = useState("");
   const [filteredUsers, setFilteredUsers] = useState([]);
 
@@ -29,6 +29,7 @@ function App() {
       setFilteredUsers(JSON.parse(localStorage.getItem("reactBitPeopleProject#36232")));
     }
   }, []);
+
 
   const onRefresh = () => {
     localStorage.removeItem("reactBitPeopleProject#36232")
@@ -50,14 +51,17 @@ function App() {
       return fullName.toLowerCase().includes(event.target.value.toLowerCase())
     })
     setFilteredUsers(filtUsers);
-    console.log(filteredUsers);
   }
 
+
+  const viewChange = () => {
+    setGridView(!gridView)
+  }
 
 
   return (
     <div className="App">
-      <Header gridView={gridView} onRefresh={onRefresh} />
+      <Header gridView={gridView} onRefresh={onRefresh} viewChange={viewChange} />
       <Search inputValue={inputValue} onChange={onTyping} />
       <Switch>
         <Route exact path='/home' component={() => <Main gridView={gridView} users={filteredUsers} inputValue={inputValue} />} />

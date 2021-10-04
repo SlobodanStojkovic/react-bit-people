@@ -1,20 +1,10 @@
 import "./Main.css";
-import React, { useEffect, useState } from 'react';
-import { getUsers } from '../../Services/getUsers';
 import { ListView } from './ListView/ListView';
 import { GridView } from "./GridView/GridView";
 import loadingImage from "../Main/assets/loadingScreen.gif";
 import noUsersImage from "../Main/assets/noUsersImage.png";
 
-export const Main = (props) => {
-    let [users, setUsers] = useState([])
-
-    useEffect(() => {
-        /* getUsers()
-            .then(users => setUsers(users)) */
-        let users = props.users;
-        setUsers(users)
-    }, [])
+export const Main = ({ gridView, users, inputValue }) => {
 
     let male = 0;
     let female = 0;
@@ -29,15 +19,14 @@ export const Main = (props) => {
         })
     }
 
-
-    if (users.length < 14 && props.inputValue.length < 1) {
+    if (users.length < 14 && inputValue.length < 1) {
         return (
             <div>
                 <img className="loadingImage" src={loadingImage} alt="loading..." />
+
             </div>
         )
-
-    } else if (users.length < 1 && props.inputValue.length > 0) {
+    } else if (users.length < 1 && inputValue.length > 0) {
         return (
             <div>
                 <img className="noUsersImage" src={noUsersImage} alt="no users..." />
@@ -45,13 +34,13 @@ export const Main = (props) => {
             </div>
         )
     } else {
-        if (!props.GridView) {
+        if (gridView) {
             return (
                 <div className='gridmain'>
                     <p className='genderdata mb-0'>Male: {male} Female: {female}</p>
                     {
                         users.map((user, index) => {
-                            return <GridView user={user} index={index} key={index}/>
+                            return <GridView user={user} index={index} key={index} />
                         })
                     }
                 </div>
@@ -62,7 +51,7 @@ export const Main = (props) => {
                     <p className='genderdata mb-0 '>Male: {male} Female: {female}</p>
                     {
                         users.map((user, index) => {
-                            return <ListView user={user} index={index} key={index}/>
+                            return <ListView user={user} index={index} key={index} />
                         })
                     }
                 </div>

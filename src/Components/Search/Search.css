@@ -6,8 +6,3 @@
     border-bottom: 1px solid gray;
     padding-left: 30px;  /* this moves input inner text from left edge so that icon can fit there */
 }
-
-::placeholder { 
-    color: gainsboro;
-    opacity: 1;
-  }

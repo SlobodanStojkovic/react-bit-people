@@ -1,4 +1,3 @@
-
 import "./About.css";
 export const About = () => {
     return (
@@ -13,3 +12,4 @@ export const About = () => {
         </div>
     )
 }
+
