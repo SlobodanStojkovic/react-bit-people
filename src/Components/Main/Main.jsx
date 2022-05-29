@@ -18,7 +18,11 @@ export const Main = ({ gridView, users, inputValue }) => {
             }
         })
     }
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> d2f332f8e2ad1606022d748fef049296ab376f55
     if (users.length < 14 && inputValue.length < 1) {
         return (
             <div>

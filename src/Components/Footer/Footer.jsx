@@ -1,7 +1,9 @@
 import "./Footer.css";
+import { timeSince } from "../../Services/timeSince";
 
 export const Footer = () => {
 
+<<<<<<< HEAD
   let lastMod = new Date(localStorage.getItem("lastModBitPeople2303"));
 
   function timeSince(date) {
@@ -32,12 +34,19 @@ export const Footer = () => {
     return Math.floor(seconds) + " seconds";
   }
 
+=======
+  let lastMod = new Date(localStorage.getItem("lastModBitPeople"));
+>>>>>>> d2f332f8e2ad1606022d748fef049296ab376f55
 
   return (
     <footer className=" navbar text-light fixed-bottom footerColor row ">
       <div className="w-75 container-fluid">
         <div className="bitCopyright text-start p-1 mx-5">© 2021 Copyright BIT</div>
+<<<<<<< HEAD
         <div className="lastModifiedDiv text-end p-1 mx-5 ">Last update: {timeSince(lastMod)} ago</div>
+=======
+        <div className="lastModifiedDiv text-end p-1 mx-5 ">Last update: {timeSince(lastMod)}</div>
+>>>>>>> d2f332f8e2ad1606022d748fef049296ab376f55
       </div>
     </footer>
   );

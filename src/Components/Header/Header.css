@@ -25,4 +25,16 @@ button {
 
 .fa-list {
     color: white;
+<<<<<<< HEAD
+=======
+}
+
+.viewChangeButton {
+    width: 26px;
+    height: 26px;
+}
+
+.viewChangeButton i {
+    width: 100%;   
+>>>>>>> d2f332f8e2ad1606022d748fef049296ab376f55
 }
